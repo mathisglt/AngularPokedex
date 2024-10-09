@@ -24,11 +24,12 @@ export class SearchBarComponent {
  
   
   ngOnInit(): void {
-    this.apiLink.getPokemons().subscribe((data:any) => {
-      data.results.forEach((e: any, index:number) => { 
-        this.lpoke.push(new Pokemon(index.toString(), e.nom));
-        console.log(this.lpoke)
+    this.apiLink.getPokemons().subscribe((data) => {
+      data.results.forEach((e: { url: string | undefined; name: string | undefined; },index:number) => { 
+        this.lpoke.push(new Pokemon(e.name, (index + 6).toString()));
+        
       });
+      console.log(this.lpoke)
     });
   }
   
