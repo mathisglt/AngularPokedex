@@ -22,6 +22,16 @@ export class SearchBarComponent {
       this.lpoke.push(new Pokemon("Tortipousse", "5"));
   }
  
+  
+  ngOnInit(): void {
+    this.apiLink.getPokemons().subscribe((data:any) => {
+      data.results.forEach((e: any, index:number) => { 
+        this.lpoke.push(new Pokemon(index.toString(), e.nom));
+        console.log(this.lpoke)
+      });
+    });
+  }
+  
   havetogo(): void {
     // Vérifiez si un Pokémon est sélectionné avant de l'afficher
     if (this.choixPokemon) {
