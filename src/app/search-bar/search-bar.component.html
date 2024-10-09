@@ -1,6 +1,7 @@
 <p>Pokemon à chercher</p>
 <input [(ngModel)]="id" placeholder="Entrez l'id du Pokémon">
+<input [(ngModel)]="filtre" placeholder="Filtre choix pokemon">
 <input [value]="id" readonly>
-<select>
+<select [(ngModel)]="choixPokemon">
     <option *ngFor="let poke of lpoke">{{poke.id}} {{poke.nom}}</option>
 </select>

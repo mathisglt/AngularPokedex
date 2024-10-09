@@ -8,6 +8,8 @@ import { Pokemon } from '../pokemon';
 })
 export class SearchBarComponent {
   id: string = '';
+  choixPokemon: string = '';
+  filtre: string = '';
   lpoke: Pokemon[] = [
   new Pokemon("Salamèche","1"),
   new Pokemon("Tiplouf","2"),
