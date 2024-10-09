@@ -83,7 +83,7 @@
     padding: 10px;
     border: 2px solid white;
     border-radius: 5px;
-    color: white; /* Ensure text inside is visible */
+    color: rgb(0, 255, 255);
     appearance: none; /* Remove default browser styles */
     -webkit-appearance: none;
     -moz-appearance: none;

@@ -17,4 +17,7 @@ export class SearchBarComponent {
   new Pokemon("Bulbizarre","4"),
   new Pokemon("Tortipousse","5")
   ]
+  havetogo(): void {
+    console.log(this.choixPokemon)
+  }
 }
