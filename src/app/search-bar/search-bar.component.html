@@ -1,12 +1,12 @@
-<p>Pokemon à chercher</p>
-<input class="input" [(ngModel)]="id" placeholder="Entrez l'id du Pokémon">
-<input class="input" [(ngModel)]="filtre" placeholder="Filtre choix pokemon">
-<input class="input" [value]="id" readonly>
-<select class="custom-select" [(ngModel)]="choixPokemon">
-  <option *ngFor="let poke of lpoke | filterPokemonPipe : 'nom' : filtre">
-    {{ poke.id }} - {{ poke.nom }}
-  </option>
-  
-</select>
-<button class="custom-select-button" role="button" (click)="havetogo()">Go !</button>
-
+<div class="vertical-container">
+    <p>Pokemon à chercher</p>
+    <input class="input" [(ngModel)]="id" placeholder="Entrez l'id du Pokémon">
+    <input class="input" [(ngModel)]="filtre" placeholder="Filtre choix pokemon">
+    <select class="custom-select" [(ngModel)]="choixPokemon">
+        <option value="" disabled selected hidden>Choix du Pokémon</option>
+        <option *ngFor="let poke of lpoke | filterPokemonPipe: 'nom': filtre" [ngValue]="poke">
+            {{ poke.id }} - {{ poke.nom }}
+        </option>
+    </select>
+    <button class="custom-select-button" role="button" (click)="havetogo()">Go !</button>
+</div>

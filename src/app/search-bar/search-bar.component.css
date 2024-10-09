@@ -105,3 +105,12 @@
     color: white;
     padding-left: 10px;
 }
+.vertical-container {
+    display: flex;
+    flex-direction: column; /* Disposition verticale */
+    justify-content: center; /* Centrer verticalement */
+    align-items: center; /* Centrer horizontalement */
+    gap: 16px; /* Espacement entre les éléments */
+    height: 100vh; /* Assurez-vous que le conteneur prend toute la hauteur de la vue */
+    padding: 16px; /* Espacement interne */
+}

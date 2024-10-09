@@ -1,23 +1,33 @@
 import { Component } from '@angular/core';
 import { Pokemon } from '../pokemon';
+import { PokeapiService } from '../pokeapi.service';
 
 @Component({
   selector: 'app-search-bar',
   templateUrl: './search-bar.component.html',
-  styleUrl: './search-bar.component.css'
+  styleUrls: ['./search-bar.component.css'] // Notez le pluriel ici
 })
 export class SearchBarComponent {
   id: string = '';
-  choixPokemon: string = '';
+  choixPokemon?: Pokemon; // Laissez-le comme un objet Pokemon
   filtre: string = '';
-  lpoke: Pokemon[] = [
-  new Pokemon("Salamèche","1"),
-  new Pokemon("Tiplouf","2"),
-  new Pokemon("Ouisticram","3"),
-  new Pokemon("Bulbizarre","4"),
-  new Pokemon("Tortipousse","5")
-  ]
+  lpoke: Pokemon[] = [];
+
+  constructor(private apiLink: PokeapiService) {
+      // Ajoutez des Pokémon à lpoke
+      this.lpoke.push(new Pokemon("Salamèche", "1"));
+      this.lpoke.push(new Pokemon("Tiplouf", "2"));
+      this.lpoke.push(new Pokemon("Ouisticram", "3"));
+      this.lpoke.push(new Pokemon("Bulbizarre", "4"));
+      this.lpoke.push(new Pokemon("Tortipousse", "5"));
+  }
+ 
   havetogo(): void {
-    console.log(this.choixPokemon)
+    // Vérifiez si un Pokémon est sélectionné avant de l'afficher
+    if (this.choixPokemon) {
+      console.log(this.choixPokemon.nom); // Affiche le nom du Pokémon sélectionné
+    } else {
+      console.log("Aucun Pokémon sélectionné.");
+    }
   }
 }
