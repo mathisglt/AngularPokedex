@@ -9,6 +9,7 @@ import { FilterPokemonPipePipe } from './filter-pokemon--pipe.pipe';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { PokeapiService } from './pokeapi.service';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
       HttpClientModule
   ],
   providers: [
-    provideAnimationsAsync()
+    provideAnimationsAsync(),
+    PokeapiService
   ],
   bootstrap: [AppComponent]
 })

@@ -12,7 +12,7 @@ export class PokeapiService {
 
   // Méthode pour récupérer la liste des Pokémon
   getPokemons(): Observable<any>{
-    return this.http.get('https://pokeapi.co/api/v2/pokemon/'); // URL de l'API pour récupérer le Pokédex
+    return this.http.get("https://pokeapi.co/api/v2/pokemon?limit=100000&offset=0"); // URL de l'API pour récupérer le Pokédex
   }
 
 }

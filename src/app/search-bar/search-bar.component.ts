@@ -14,24 +14,17 @@ export class SearchBarComponent {
   lpoke: Pokemon[] = [];
 
   constructor(private apiLink: PokeapiService) {
-      // Ajoutez des Pokémon à lpoke
-      this.lpoke.push(new Pokemon("Salamèche", "1"));
-      this.lpoke.push(new Pokemon("Tiplouf", "2"));
-      this.lpoke.push(new Pokemon("Ouisticram", "3"));
-      this.lpoke.push(new Pokemon("Bulbizarre", "4"));
-      this.lpoke.push(new Pokemon("Tortipousse", "5"));
   }
  
   
   ngOnInit(): void {
     this.apiLink.getPokemons().subscribe((data) => {
-      data.results.forEach((e: { url: string | undefined; name: string | undefined; },index:number) => { 
-        this.lpoke.push(new Pokemon(e.name, (index + 6).toString()));
-        
+      this.lpoke = data.results.map((e: { url: string | undefined; name: string | undefined; }, index: number) => 
+        new Pokemon(this.capitalize(e.name), (index).toString())
+      );
       });
       console.log(this.lpoke)
-    });
-  }
+    };
   
   havetogo(): void {
     // Vérifiez si un Pokémon est sélectionné avant de l'afficher
@@ -41,4 +34,12 @@ export class SearchBarComponent {
       console.log("Aucun Pokémon sélectionné.");
     }
   }
+
+  capitalize(s:string | undefined ) {
+    if (s){
+      return s[0].toUpperCase() + s.slice(1);
+    }
+    else return ""
+  }
+
 }
