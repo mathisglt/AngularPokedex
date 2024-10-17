@@ -9,4 +9,6 @@
         </option>
     </select>
     <button class="custom-select-button" role="button" (click)="havetogo()">Go !</button>
+    <app-affichagedata *ngIf="choixPokemon"  [idPoke]="choixPokemon.id"></app-affichagedata>
+ 
 </div>

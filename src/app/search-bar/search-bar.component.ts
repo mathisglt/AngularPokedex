@@ -24,7 +24,6 @@ export class SearchBarComponent {
         new Pokemon(this.capitalize(params.name), (index).toString())
       );
       });
-      console.log(this.lpoke)
     };
   
   havetogo(): void {

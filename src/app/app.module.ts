@@ -10,13 +10,15 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { PokeapiService } from './pokeapi.service';
+import { AffichagedataComponent } from './affichagedata/affichagedata.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     SearchBarComponent,
-    FilterPokemonPipePipe
+    FilterPokemonPipePipe,
+    AffichagedataComponent
   ],
   imports: [
     BrowserModule,
