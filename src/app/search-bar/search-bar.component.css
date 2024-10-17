@@ -11,7 +11,7 @@
     border-radius: 6px; /* Match the button's border radius */
     box-shadow: rgba(45, 35, 66, .4) 0 2px 4px, rgba(45, 35, 66, .3) 0 7px 13px -3px, rgba(58, 65, 111, .5) 0 -3px 0 inset; /* Same box shadow */
     box-sizing: border-box;
-    color: rgb(0, 255, 255);
+    color: #ec3838;
     cursor: pointer;
     display: inline-flex;
     font-family: "JetBrains Mono", monospace; /* Same font */
@@ -34,16 +34,16 @@
 
 /* Focus, hover, and active states */
 .custom-select-button:focus {
-    box-shadow: rgb(0, 255, 255) 0 0 0 1.5px inset, rgba(45, 35, 66, .4) 0 2px 4px, rgba(45, 35, 66, .3) 0 7px 13px -3px, rgb(0, 255, 255) 0 -3px 0 inset;
+    box-shadow: #ec3838 0 0 0 1.5px inset, rgba(45, 35, 66, .4) 0 2px 4px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #ec3838 0 -3px 0 inset;
 }
 
 .custom-select-button:hover {
-    box-shadow: rgba(45, 35, 66, .4) 0 4px 8px, rgba(45, 35, 66, .3) 0 7px 13px -3px, rgb(0, 255, 255) 0 -3px 0 inset;
+    box-shadow: rgba(45, 35, 66, .4) 0 4px 8px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #ec3838 0 -3px 0 inset;
     transform: translateY(-2px);
 }
 
 .custom-select-button:active {
-    box-shadow: rgb(0, 255, 255) 0 3px 7px inset;
+    box-shadow: #ec3838 0 3px 7px inset;
     transform: translateY(2px);
 }
 
@@ -57,21 +57,21 @@
     /* text-align: center; */
     border: 2px solid white;
     border-radius: 5px;
-    color: rgb(0, 255, 255);
+    color: #ec3838;
     /* box-shadow: 3px 3px 2px rgb(249, 255, 85); */
   }
   
   .input:focus {
-    color: rgb(0, 255, 255);
+    color: white;
     background-color: #212121;
-    outline-color: rgb(0, 255, 255);
-    box-shadow: -3px -3px 15px rgb(0, 255, 255);
+    outline-color: #ec3838;
+    box-shadow: -3px -3px 15px #ec3838;
     transition: .1s;
     transition-property: box-shadow;
   }
 
 .input::placeholder {
-    color: rgb(0, 255, 255);
+    color: #e15e5e;
 }
 
 
@@ -83,7 +83,7 @@
     padding: 10px;
     border: 2px solid white;
     border-radius: 5px;
-    color: rgb(0, 255, 255);
+    color: #e15e5e;
     appearance: none; /* Remove default browser styles */
     -webkit-appearance: none;
     -moz-appearance: none;
@@ -91,10 +91,10 @@
 }
 
 .custom-select:focus {
-    color: rgb(0, 255, 255);
+    color: white;
     background-color: #212121;
-    outline-color: rgb(0, 255, 255);
-    box-shadow: -3px -3px 15px rgb(0, 255, 255);
+    outline-color: #e15e5e;
+    box-shadow: -3px -3px 15px #ec3838;
     transition: .1s;
     transition-property: box-shadow;
 }
@@ -113,4 +113,7 @@
     gap: 16px; /* Espacement entre les éléments */
     height: 100vh; /* Assurez-vous que le conteneur prend toute la hauteur de la vue */
     padding: 16px; /* Espacement interne */
+}
+p {
+    color :#e15e5e;
 }

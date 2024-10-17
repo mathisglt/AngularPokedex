@@ -33,7 +33,7 @@
             "assets": [
               {
                 "glob": "**/*",
-                "input": "public"
+                "input": "app/images/"
               }
             ],
             "styles": [

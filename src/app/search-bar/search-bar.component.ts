@@ -21,7 +21,7 @@ export class SearchBarComponent {
   ngOnInit(): void {
     this.apiLink.getPokemons().subscribe((data) => {
       this.lpoke = data.results.map((params: { url: string; name: string; }, index: number) => 
-        new Pokemon(this.capitalize(params.name), (index).toString())
+        new Pokemon(this.capitalize(params.name), (index+1).toString())
       );
       });
     };
