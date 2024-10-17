@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Pokemon } from '../pokemon';
 import { PokeapiService } from '../pokeapi.service';
 
+
 @Component({
   selector: 'app-search-bar',
   templateUrl: './search-bar.component.html',
@@ -19,8 +20,8 @@ export class SearchBarComponent {
   
   ngOnInit(): void {
     this.apiLink.getPokemons().subscribe((data) => {
-      this.lpoke = data.results.map((e: { url: string | undefined; name: string | undefined; }, index: number) => 
-        new Pokemon(this.capitalize(e.name), (index).toString())
+      this.lpoke = data.results.map((params: { url: string; name: string; }, index: number) => 
+        new Pokemon(this.capitalize(params.name), (index).toString())
       );
       });
       console.log(this.lpoke)
