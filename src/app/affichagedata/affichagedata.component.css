@@ -1,254 +1,272 @@
-
-
-.custom-select-button {
-    align-items: center;
-    appearance: none; /* Remove default browser styles */
-    background-image: radial-gradient(100% 100% at 100% 0, #595959 0,#212121 100%); /* Same gradient as the button */
-    border: 0;
-    border-radius: 6px; /* Match the button's border radius */
-    box-shadow: rgba(45, 35, 66, .4) 0 2px 4px, rgba(45, 35, 66, .3) 0 7px 13px -3px, rgba(58, 65, 111, .5) 0 -3px 0 inset; /* Same box shadow */
-    box-sizing: border-box;
-    color: #ec3838;
-    cursor: pointer;
-    display: inline-flex;
-    font-family: "JetBrains Mono", monospace; /* Same font */
-    height: 48px; /* Match the button height */
-    justify-content: center;
-    line-height: 1;
-    padding-left: 16px;
-    padding-right: 16px;
-    position: relative;
-    text-align: left;
-    text-decoration: none;
-    transition: box-shadow .15s, transform .15s;
-    user-select: none;
-    -webkit-user-select: none;
-    touch-action: manipulation;
-    white-space: nowrap;
-    will-change: box-shadow, transform;
-    font-size: 1px; /* Match the font size of the button */
-}
-
-/* Focus, hover, and active states */
-.custom-select-button:focus {
-    box-shadow: #ec3838 0 0 0 1.5px inset, rgba(45, 35, 66, .4) 0 2px 4px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #ec3838 0 -3px 0 inset;
-}
-
-.custom-select-button:hover {
-    box-shadow: rgba(45, 35, 66, .4) 0 4px 8px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #ec3838 0 -3px 0 inset;
-    transform: translateY(-2px);
-}
-
-.custom-select-button:active {
-    box-shadow: #ec3838 0 3px 7px inset;
-    transform: translateY(2px);
-}
 .pokedex-container {
     position: relative;
     width: 800px;
     height: 600px;
-  }
-  
-  .pokedex-background {
+}
+
+.pokedex-background {
     width: 100%;
     height: auto;
-  }
-  
-  .screen {
+}
+
+.screen {
     position: absolute;
     background-color: #212121;
     border-radius: 10px;
-  }
-  
-  .left-screen {
-    color:white;
+}
+
+.left-screen {
+    color: white;
     top: 25%;
     left: 3.8%;
     width: 39.5%;
     height: 55%;
     display: flex;
     justify-content: center;
-    align-items: flex-start; /* Aligne le contenu en haut */
+    align-items: flex-start;
     font-size: 15px;
-    overflow-y: auto; /* Ajoute un défilement si nécessaire */
+    overflow-y: auto;
 }
 
 .pokemon-info {
-    width: 100%; /* Prend toute la largeur disponible */
+    width: 100%;
 }
 
-/* Réduction des marges pour les paragraphes */
-/* Centrer les titres h2 et h3 */
 .pokemon-info h2, .pokemon-info h3 {
-    text-align: center; /* Centre le texte */
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    margin: 5px 0;
+    background-color: rgba(255, 102, 102, 0.4); 
+    border-radius: 50px; 
+    padding: 5px; 
 }
 
-/* Centrer les éléments de liste */
-.pokemon-info ul {
-    padding-left: 0; /* Supprime l'espacement gauche */
-    margin: 5px 0; /* Réduit les marges autour des listes */
-    display: flex; /* Les éléments de la liste s'affichent côte à côte */
-    flex-wrap: wrap; /* Permet aux éléments de revenir à la ligne si nécessaire */
-    justify-content: center; /* Centre les éléments horizontalement */
-    text-align: center; /* Centre le texte à l'intérieur des éléments */
-    font-size: 15px;
+.pokemon-info ul, p {
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    padding:0px;
+    margin: 1px 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    font-size: 20px;
 }
 
 .pokemon-info li {
-    list-style-type: none; /* Supprime les puces des listes */
-    font-size: 0.8em; /* Taille pour les éléments de la liste */
-    margin: 2px 10px; /* Ajoute un petit espacement entre les éléments de la liste */
-    display: inline-block; /* Les éléments s'affichent côte à côte */
-    text-align: center; /* Centre le texte à l'intérieur des éléments */
-}
-
-
-/* Largeur de la barre de défilement */
-.left-screen::-webkit-scrollbar {
-    width: 12px; /* Un peu plus large pour mieux visualiser la Pokéball */
-}
-
-/* Track de la barre de défilement */
-.left-screen::-webkit-scrollbar-track {
-    background: linear-gradient(#ec3838, #f6c4c4);
-    /* Rouge et blanc pour simuler une Pokéball */
-    border-radius: 10px;
-}
-
-/* Poignée de la barre de défilement */
-.left-screen::-webkit-scrollbar-thumb {
-    background: url('https://e7.pngegg.com/pngimages/324/645/png-clipart-pokeball-pokeball-thumbnail.png') center/cover; /* Image de Pokéball */
-    border-radius: 50%; /* Arrondir pour imiter une Pokéball */
-    border: 2px solid black; /* Bordure noire pour mieux délimiter */
-}
-
-/* Survol de la poignée */
-.left-screen::-webkit-scrollbar-thumb:hover {
-    background-color: #ffcb05; /* Jaune pour simuler l'effet de survol (type Pikachu) */
-    border-color: #212121; /* Bordure bleue sur le hover (référence aux couleurs de Pokémon) */
-}
-
-
-
-.right-screen {
-    top: 26%;  
-    right: 4%; 
-    width: 40%; /* Ajustez si besoin */
-    height: 65%; /* Augmentez légèrement la hauteur */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 2px solid white; /* Bordure blanche */
-    border-radius: 10px; /* Arrondir les coins pour un look plus doux */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Ombre pour un effet de profondeur */
-    background: radial-gradient(circle, white 0%, #212121 75%); /* Dégradé en cercle vers l'intérieur */
-    overflow: hidden; /* Pour s'assurer que le dégradé ne déborde pas */
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.image-container {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.large-image {
-    width: 100%; /* Utiliser toute la largeur disponible */
-    height: auto; /* Ajuster la hauteur automatiquement pour maintenir les proportions */
-    max-height: 100%; /* S'assurer que l'image ne dépasse pas la hauteur du conteneur */
-    object-fit: contain; /* Maintenir le ratio de l'image */
+    list-style-type: none;
+    font-size: 20px;
+    margin: 5px 10px;
+    padding: 0px 15px;
+    border-radius: 20px;
+    color: white;
+    text-transform: capitalize;
+    display: inline-block;
 }
 
   
-  .custom-select-button {
-    padding: 10px;
-    background-color: red;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+  .left-screen::-webkit-scrollbar {
+    width: 12px;
   }
   
-
-
-
-  .pokeball-explode {
-    position: relative;
-    width: 100px; /* Taille de la Pokéball */
-    height: 100px;
-    animation: explode 0.5s forwards; /* Animation d'explosion */
-    z-index: 10; /* S'assurer que la Pokéball est au-dessus de l'image */
+  .left-screen::-webkit-scrollbar-track {
+    background: linear-gradient(#f0f0f0, #f6c4c4);
+    border-radius: 10px;
+  }
+  
+  .left-screen::-webkit-scrollbar-thumb {
+    background: url('https://e7.pngegg.com/pngimages/324/645/png-clipart-pokeball-pokeball-thumbnail.png') center/cover no-repeat;
+    border-radius: 50%;
+    border: 2px solid black;
+  }
+  
+  
+  .left-screen::-webkit-scrollbar-thumb:hover {
+    background-color: #ffcb05;
+    border-color: #212121;
+  }
+  .scrollable {
+    scrollbar-width: thin; 
+    scrollbar-color: #888 #f0f0f0; 
 }
-
-.pokeball {
+  
+  .right-screen {
+    top: 26%;
+    right: 4%;
+    width: 40%;
+    height: 65%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    background: radial-gradient(circle, white 0%, #212121 75%);
+    overflow: hidden;
+  }
+  
+  .image-container {
     width: 100%;
     height: 100%;
-    background-image: url('https://e7.pngegg.com/pngimages/324/645/png-clipart-pokeball-pokeball-thumbnail.png'); /* Remplacez par l'image de votre Pokéball */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .large-image {
+    width: 100%;
+    height: auto;
+    max-width: 250px;
+    display: block;
+    margin: 0 auto;
+    object-fit: contain;
+  }
+  
+  .pokeball-explode {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    animation: explode 0.5s forwards;
+    z-index: 10;
+  }
+  
+  .pokeball {
+    width: 100%;
+    height: 100%;
+    background-image: url('https://e7.pngegg.com/pngimages/324/645/png-clipart-pokeball-pokeball-thumbnail.png');
     background-size: cover;
     border-radius: 50%;
-    animation: shake 0.2s infinite; /* Ajout d'une légère secousse avant l'explosion */
-}
-
-@keyframes explode {
+    animation: shake 0.2s infinite;
+  }
+  
+  @keyframes explode {
     0% {
-        transform: scale(1);
-        opacity: 1;
+      transform: scale(1);
+      opacity: 1;
     }
     50% {
-        transform: scale(1.5); /* Élargissement de la Pokéball */
-        opacity: 1;
+      transform: scale(1.5);
+      opacity: 1;
     }
     100% {
-        transform: scale(0);
-        opacity: 0; /* Réduction à zéro */
+      transform: scale(0);
+      opacity: 0;
     }
-}
-
-@keyframes shake {
+  }
+  
+  @keyframes shake {
     0%, 100% {
-        transform: translate(0);
+      transform: translate(0);
     }
     25% {
-        transform: translate(-5px, 0);
+      transform: translate(-5px, 0);
     }
     50% {
-        transform: translate(5px, 0);
+      transform: translate(5px, 0);
     }
     75% {
-        transform: translate(-5px, 0);
+      transform: translate(-5px, 0);
     }
-}
-
-.large-image {
-    width: 100%; /* Utiliser toute la largeur disponible */
-    height: auto; /* Ajuster la hauteur automatiquement pour maintenir les proportions */
-    max-height: 100%; /* S'assurer que l'image ne dépasse pas la hauteur du conteneur */
-    opacity: 0; /* Masquer l'image au début */
-    animation: fadeIn 0.5s forwards 0.5s; /* Animation pour faire apparaître l'image après l'explosion */
-}
-
-@keyframes fadeIn {
+  }
+  
+  .p-carousel .p-carousel-content {
+    background: radial-gradient(circle, rgba(255, 255, 255, 1) 0%, rgba(0, 0, 0, 1) 100%);
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+  }
+  
+  @keyframes fadeIn {
     to {
-        opacity: 1; /* Rendre l'image visible */
+      opacity: 1;
     }
+  }
+  
+  ::ng-deep .p-carousel .p-carousel-prev, 
+  ::ng-deep .p-carousel .p-carousel-next {
+    background-color: #ec3838;
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  ::ng-deep .p-carousel .p-carousel-prev, 
+::ng-deep .p-carousel .p-carousel-next {
+  transition: background-color 0.3s, transform 0.3s;
+}
+ 
+::ng-deep .p-carousel .p-carousel-next:hover {
+  background-color: #ff6666; 
+}
+
+.type-grass {
+    background-color: #78C850;
+}
+
+.type-fire {
+    background-color: #F08030;
+}
+
+.type-water {
+    background-color: #6890F0;
+}
+
+.type-bug {
+    background-color: #A8B820;
+}
+
+.type-normal {
+    background-color: #A8A878;
+}
+
+.type-poison {
+    background-color: #A040A0;
+}
+
+.type-electric {
+    background-color: #F8D030;
+}
+
+.type-ground {
+    background-color: #E0C068;
+}
+
+.type-fairy {
+    background-color: #EE99AC;
+}
+
+.type-fighting {
+    background-color: #C03028;
+}
+
+.type-psychic {
+    background-color: #F85888;
+}
+
+.type-rock {
+    background-color: #B8A038;
+}
+
+.type-ghost {
+    background-color: #705898;
+}
+
+.type-ice {
+    background-color: #98D8D8;
+}
+
+.type-dragon {
+    background-color: #7038F8;
+}
+
+.type-dark {
+    background-color: #705848;
+}
+
+.type-steel {
+    background-color: #B8B8D0;
+}
+
+.type-flying {
+    background-color: #A890F0;
 }

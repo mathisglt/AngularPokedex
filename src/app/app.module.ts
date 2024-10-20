@@ -11,6 +11,7 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { PokeapiService } from './pokeapi.service';
 import { AffichagedataComponent } from './affichagedata/affichagedata.component';
+import { CarouselModule } from 'primeng/carousel';
 
 
 @NgModule({
@@ -24,7 +25,7 @@ import { AffichagedataComponent } from './affichagedata/affichagedata.component'
     BrowserModule,
     AppRoutingModule,FormsModule,
       MatSlideToggleModule,
-      HttpClientModule
+      HttpClientModule,CarouselModule
   ],
   providers: [
     provideAnimationsAsync(),

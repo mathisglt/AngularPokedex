@@ -4,24 +4,27 @@
     <img src="https://i.imgur.com/Q5iNikQ.png" alt="Pokedex" class="pokedex-background" />
     <div class="screen left-screen">
       <div class="pokemon-info">
-        <h2 style="color:#ec3838;"><u> {{pokemon.name}}</u></h2>
+        <h2 style="color:black;background-color: green;"><u> {{pokemon.name}}</u></h2>
         <p><strong>Expérience de base :</strong> {{pokemon.base_experience}} XP</p>
         <p><strong>Taille :</strong> {{pokemon.height / 10}} m</p>
         <p><strong>Poids :</strong> {{pokemon.weight / 10}} kg</p>
 
         <p><strong>Type(s) :</strong></p>
         <ul>
-          <li *ngFor="let type of pokemon.types">{{type.type.name}}</li>
+          <li *ngFor="let type of pokemon.types" [ngClass]="'type-' + type.type.name">
+            {{type.type.name}}
+          </li>
         </ul>
+
 
         <h3>Statistiques :</h3>
         <ul>
-          <li><strong>PV :</strong> {{pokemon.stats[0].base_stat}}</li>
-          <li><strong>Attaque :</strong> {{pokemon.stats[1].base_stat}}</li>
-          <li><strong>Défense :</strong> {{pokemon.stats[2].base_stat}}</li>
-          <li><strong>Attaque spéciale :</strong> {{pokemon.stats[3].base_stat}}</li>
-          <li><strong>Défense spéciale :</strong> {{pokemon.stats[4].base_stat}}</li>
-          <li><strong>Vitesse :</strong> {{pokemon.stats[5].base_stat}}</li>
+          <li><strong>PV :</strong> {{pokemon.stats[0].base_stat }} </li>
+          <li><strong>Attaque :</strong> {{pokemon.stats[1].base_stat }} </li>
+          <li><strong>Défense :</strong> {{pokemon.stats[2].base_stat }} </li>
+          <li><strong>Attaque spéciale :</strong> {{pokemon.stats[3].base_stat }} </li>
+          <li><strong>Défense spéciale :</strong> {{pokemon.stats[4].base_stat }} </li>
+          <li><strong>Vitesse :</strong> {{pokemon.stats[5].base_stat }} </li>
         </ul>
 
         <h3>Capacités :</h3>
@@ -42,13 +45,6 @@
         <ul>
           <li *ngFor="let form of pokemon.forms">{{form.name}}</li>
         </ul>
-
-        <h3>Indices de jeu :</h3>
-        <ul>
-          <li *ngFor="let gameIndex of pokemon.game_indices">
-            Version : {{gameIndex.version.name}}, Index : {{gameIndex.game_index}}
-          </li>
-        </ul>
       </div>
     </div>
 
@@ -57,7 +53,12 @@
         <div class="pokeball-explode" *ngIf="!pokemonLoaded">
           <div class="pokeball"></div>
         </div>
-        <img [src]="photoUrl" alt="Pokemon Image" class="large-image" *ngIf="pokemonLoaded" />
+        <p-carousel  *ngIf="pokemonLoaded" [value]="pokemonImages" [numVisible]="1" [numScroll]="1" 
+        [circular]="true" [autoplayInterval]="3000" [showIndicators]="false">
+          <ng-template pTemplate="item" let-image>
+            <img [src]="image" alt="Pokemon Image" class="large-image" />
+          </ng-template>
+        </p-carousel>
       </div>
     </div>    
   </div>

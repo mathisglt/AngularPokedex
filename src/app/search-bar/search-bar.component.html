@@ -1,5 +1,5 @@
 <div class="vertical-container">
-    <p>Pokemon à chercher</p>
+    <p>Pokedex</p>
     <input class="input" [(ngModel)]="id" placeholder="Entrez l'id du Pokémon">
     <input class="input" [(ngModel)]="filtre" placeholder="Filtre choix pokemon">
     <select class="custom-select" [(ngModel)]="choixPokemon">
@@ -8,7 +8,7 @@
             {{ poke.id }} - {{ poke.nom }}
         </option>
     </select>
-    <button class="custom-select-button" role="button" (click)="havetogo()">Go !</button>
+
     <app-affichagedata *ngIf="choixPokemon"  [idPoke]="choixPokemon.id"></app-affichagedata>
  
 </div>

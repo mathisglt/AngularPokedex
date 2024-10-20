@@ -2,6 +2,7 @@ import { Component, Input, SimpleChanges } from '@angular/core';
 import { PokeapiService } from '../pokeapi.service';
 import { PokeModelDetails } from '../model';
 import { Pokemon } from '../pokemon';
+import { CarouselModule } from 'primeng/carousel';
 
 @Component({
   selector: 'app-affichagedata',
@@ -46,6 +47,7 @@ export class AffichagedataComponent {
   
   // Nouvelle variable pour gérer l'affichage de l'image
   pokemonLoaded: boolean = false; // État pour gérer si le Pokémon est chargé
+  pokemonImages: string[]= [];
 
   constructor(private apiLink: PokeapiService) {}
 
@@ -54,7 +56,12 @@ export class AffichagedataComponent {
       this.apiLink.getPokemonDetails(this.idPoke + "").subscribe((data) => {
         this.photoUrl = data.sprites.front_default;
         this.pokemon = data;
-
+        this.pokemonImages = [
+          this.pokemon.sprites.front_default,
+          this.pokemon.sprites.back_default,
+          this.pokemon.sprites.front_shiny,
+          this.pokemon.sprites.back_shiny,
+        ].filter(img => img !== null); // On filtre pour enlever les images nulles
         // Gérer l'état de chargement du Pokémon
         this.pokemonLoaded = false; // Commence par cacher l'image
 

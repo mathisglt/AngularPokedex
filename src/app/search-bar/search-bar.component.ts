@@ -25,15 +25,6 @@ export class SearchBarComponent {
       );
       });
     };
-  
-  havetogo(): void {
-    // Vérifiez si un Pokémon est sélectionné avant de l'afficher
-    if (this.choixPokemon) {
-      console.log(this.choixPokemon.nom); // Affiche le nom du Pokémon sélectionné
-    } else {
-      console.log("Aucun Pokémon sélectionné.");
-    }
-  }
 
   capitalize(s:string | undefined ) {
     if (s){
