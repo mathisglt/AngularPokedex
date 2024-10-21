@@ -45,9 +45,9 @@ export class AffichagedataComponent {
   
   @Input() idPoke?: string;
   
-  // Nouvelle variable pour gérer l'affichage de l'image
-  pokemonLoaded: boolean = false; // État pour gérer si le Pokémon est chargé
+  pokemonLoaded: boolean = false; 
   pokemonImages: string[]= [];
+  cri: string ="";
 
   constructor(private apiLink: PokeapiService) {}
 
@@ -56,19 +56,17 @@ export class AffichagedataComponent {
       this.apiLink.getPokemonDetails(this.idPoke + "").subscribe((data) => {
         this.photoUrl = data.sprites.front_default;
         this.pokemon = data;
+        this.cri = this.pokemon.cries.latest;
         this.pokemonImages = [
           this.pokemon.sprites.front_default,
           this.pokemon.sprites.back_default,
           this.pokemon.sprites.front_shiny,
           this.pokemon.sprites.back_shiny,
-        ].filter(img => img !== null); // On filtre pour enlever les images nulles
-        // Gérer l'état de chargement du Pokémon
-        this.pokemonLoaded = false; // Commence par cacher l'image
-
-        // Délai pour faire exploser la Pokéball avant d'afficher l'image
+        ].filter(img => img !== null); 
+        this.pokemonLoaded = false; 
         setTimeout(() => {
-          this.pokemonLoaded = true; // Affiche l'image après l'explosion
-        }, 500); // Temps d'attente pour l'animation d'explosion
+          this.pokemonLoaded = true; 
+        }, 500);
       });
     }
   }
