@@ -1,38 +1,28 @@
-
-
-
-
-
 .custom-select-button {
     align-items: center;
-    appearance: none; /* Remove default browser styles */
-    background-image: radial-gradient(100% 100% at 100% 0, #595959 0,#212121 100%); /* Same gradient as the button */
+    appearance: none;
+    background-image: radial-gradient(100% 100% at 100% 0, #595959 0, #212121 100%);
     border: 0;
-    border-radius: 6px; /* Match the button's border radius */
-    box-shadow: rgba(45, 35, 66, .4) 0 2px 4px, rgba(45, 35, 66, .3) 0 7px 13px -3px, rgba(58, 65, 111, .5) 0 -3px 0 inset; /* Same box shadow */
+    border-radius: 6px;
+    box-shadow: rgba(45, 35, 66, .4) 0 2px 4px, rgba(45, 35, 66, .3) 0 7px 13px -3px, rgba(58, 65, 111, .5) 0 -3px 0 inset;
     box-sizing: border-box;
-    color: #ec3838;
+    color: #0aaf0a;
     cursor: pointer;
     display: inline-flex;
-    font-family: "JetBrains Mono", monospace; /* Same font */
-    height: 48px; /* Match the button height */
+    height: 48px;
     justify-content: center;
     line-height: 1;
-    padding-left: 16px;
-    padding-right: 16px;
+    padding: 0 16px;
     position: relative;
     text-align: left;
     text-decoration: none;
     transition: box-shadow .15s, transform .15s;
     user-select: none;
-    -webkit-user-select: none;
-    touch-action: manipulation;
     white-space: nowrap;
     will-change: box-shadow, transform;
-    font-size: 18px; /* Match the font size of the button */
+    font-size: 18px;
 }
 
-/* Focus, hover, and active states */
 .custom-select-button:focus {
     box-shadow: #ec3838 0 0 0 1.5px inset, rgba(45, 35, 66, .4) 0 2px 4px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #ec3838 0 -3px 0 inset;
 }
@@ -47,73 +37,62 @@
     transform: translateY(2px);
 }
 
-
-/* From Uiverse.io by Yaseen549 */ 
 .input {
-    background-color: #212121;
-    max-width: 190px;
+    background-color: #0F0F0F;
+    width: 250px;
     height: 40px;
     padding: 10px;
-    /* text-align: center; */
-    border: 2px solid white;
+    border: 1px solid #555555; /* Bordure subtile */
     border-radius: 5px;
-    color: #ec3838;
-    /* box-shadow: 3px 3px 2px rgb(249, 255, 85); */
-  }
-  
-  .input:focus {
-    color: white;
-    background-color: #212121;
-    outline-color: #ec3838;
-    box-shadow: -3px -3px 15px #ec3838;
-    transition: .1s;
-    transition-property: box-shadow;
-  }
+    color: #0aaf0a;
+    outline: none;
+    font-size: 16px;
+    transition: box-shadow .1s, transform .1s;
+}
+
+.input:focus {
+    color: #ffffff; /* Texte plus clair en focus */
+    background-color: #0F0F0F;
+    border-color: #0aaf0a; /* Bordure de focus visible */
+    box-shadow: 0 0 10px 0 #0aaf0a;
+    transform: scale(1.02);
+}
 
 .input::placeholder {
-    color: #e15e5e;
+    color: #0aaf0a;
 }
 
 
-
-  .custom-select {
-    background-color: #212121;
-    max-width: 190px;
+.custom-select {
+    background-color: #0f0f0f;
+    max-width: 250px;
     height: 40px;
     padding: 10px;
-    border: 2px solid white;
+    border: none;
     border-radius: 5px;
-    color: #e15e5e;
-    appearance: none; /* Remove default browser styles */
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    font-size: 16px; /* Match the font size of the input */
+    color: #0aaf0a;
+    appearance: none;
+    font-size: 16px;
+    border: 1px solid #555555; 
 }
 
 .custom-select:focus {
-    color: white;
-    background-color: #212121;
-    outline-color: #e15e5e;
-    box-shadow: -3px -3px 15px #ec3838;
-    transition: .1s;
-    transition-property: box-shadow;
+    color: #0aaf0a;
+    background-color: #0f0f0f;
+    box-shadow: 0 0 10px 0 #0aaf0a;
+    transform: scale(1.02);
 }
 
-/* Optional: Add a custom arrow */
-.custom-select::after {
-    content: "▼";
-    color: white;
-    padding-left: 10px;
-}
 .vertical-container {
     display: flex;
-    flex-direction: column; /* Disposition verticale */
-    justify-content: center; /* Centrer verticalement */
-    align-items: center; /* Centrer horizontalement */
-    gap: 16px; /* Espacement entre les éléments */
-    height: 100vh; /* Assurez-vous que le conteneur prend toute la hauteur de la vue */
-    padding: 16px; /* Espacement interne */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    height: 100vh;
+    padding: 16px;
 }
+
 p {
-    color :#e15e5e;
+    color: #0aaf0a;
 }

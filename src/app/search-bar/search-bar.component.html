@@ -1,10 +1,9 @@
 <div class="vertical-container">
     <p>Pokedex</p>
-    <input class="input" [(ngModel)]="id" placeholder="Entrez l'id du Pokémon">
     <input class="input" [(ngModel)]="filtre" placeholder="Filtre choix pokemon">
     <select class="custom-select" [(ngModel)]="choixPokemon">
         <option value="" disabled selected hidden>Choix du Pokémon</option>
-        <option *ngFor="let poke of lpoke | filterPokemonPipe: 'nom': filtre" [ngValue]="poke">
+        <option *ngFor="let poke of lpoke | filterPokemonPipe: 'nom': filtre : id" [ngValue]="poke">
             {{ poke.id }} - {{ poke.nom }}
         </option>
     </select>

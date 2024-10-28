@@ -1,7 +1,14 @@
-  .pokedex-container {
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+
+.pokedex-container {
+      font-family: 'Poppins', sans-serif;
       position: relative;
       width: 800px;
       height: 600px;
+      
+      
+      
   }
 
   .pokedex-background {
@@ -11,7 +18,7 @@
 
   .screen {
       position: absolute;
-      background-color: #212121;
+      background-color: #0f0f0f;
       border-radius: 10px;
   }
 
@@ -27,14 +34,33 @@
       font-size: 15px;
       overflow-y: auto;
   }
+  .pokemon-name {
+    color: white;
+    background: linear-gradient(135deg, #4CAF50, #2E7D32);
+    padding: 10px 10px;
+    width: 100%;
+    box-sizing: border-box; 
+    border-radius: 10px;
+    text-transform: uppercase;
+
+    font-weight: bold;
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); 
+    margin: 10px 0;
+    display: block;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); 
+}
+
 
   .pokemon-info {
       width: 100%;
   }
 
   .pokemon-info h2, .pokemon-info h3 {
-      font-family: 'Roboto', sans-serif;
+      font-family: 'Poppins', sans-serif;
+      font-weight: bold;
       text-align: center;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); 
       margin: 5px 0;
       background-color: rgba(255, 102, 102, 0.4); 
       border-radius: 50px; 
@@ -43,7 +69,10 @@
 
   .pokemon-info ul, p {
       color: white;
-      font-family: 'Roboto', sans-serif;
+      font-family: 'Poppins', sans-serif;
+      font-weight: bold;
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);  
       padding:0px;
       margin: 1px 0;
       display: flex;
@@ -90,20 +119,40 @@
       scrollbar-color: #888 #f0f0f0; 
   }
     
-    .right-screen {
-      top: 26%;
-      right: 4%;
-      width: 40%;
-      height: 65%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      border: 2px solid white;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-      background: radial-gradient(circle, white 0%, #212121 75%);
-      overflow: hidden;
+  .right-screen {
+    position: absolute;
+    top: 26%;
+    right: 4%;
+    width: 40%;
+    height: 65%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #00ffcc;
+    border-radius: 15px;
+    background: linear-gradient(-45deg, #0f0f0f, #1a3d1a, #0c0c0c, #193319);
+    background-size: 400% 400%;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 255, 204, 0.5), 0 4px 8px rgba(0, 0, 0, 0.3);
+    animation: animEcranDroite 5s ease infinite;
+}
+
+@keyframes animEcranDroite {
+    0% {
+      background-position: 0% 50%;
+      box-shadow: 0 0 10px rgba(0, 255, 204, 0.5), 0 4px 8px rgba(0, 0, 0, 0.3);
     }
+    50% {
+      background-position: 30% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+      box-shadow: 0 0 20px rgba(0, 255, 204, 0.8), 0 4px 12px rgba(0, 0, 0, 0.4);
+    }
+}
+
+
+
     
     .image-container {
       width: 100%;

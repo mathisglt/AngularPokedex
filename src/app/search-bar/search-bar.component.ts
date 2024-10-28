@@ -6,11 +6,11 @@ import { PokeapiService } from '../pokeapi.service';
 @Component({
   selector: 'app-search-bar',
   templateUrl: './search-bar.component.html',
-  styleUrls: ['./search-bar.component.css'] // Notez le pluriel ici
+  styleUrls: ['./search-bar.component.css'] 
 })
 export class SearchBarComponent {
   id: string = '';
-  choixPokemon?: Pokemon; // Laissez-le comme un objet Pokemon
+  choixPokemon?: Pokemon; 
   filtre: string = '';
   lpoke: Pokemon[] = [];
 
@@ -23,6 +23,9 @@ export class SearchBarComponent {
       this.lpoke = data.results.map((params: { url: string; name: string; }, index: number) => 
         new Pokemon(this.capitalize(params.name), (index+1).toString())
       );
+      if (this.lpoke.length > 0) {
+        this.choixPokemon = this.lpoke[0];
+      }
       });
     };
 
