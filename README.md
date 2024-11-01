@@ -4,7 +4,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Première étape
 
-Si nécessaire, faire `npm install ng`
+Si nécessaire, faire `npm install ng` dans un terminal
 
 ## Deuxième étape
 
