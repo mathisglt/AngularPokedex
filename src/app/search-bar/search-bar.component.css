@@ -42,7 +42,7 @@
     width: 250px;
     height: 40px;
     padding: 10px;
-    border: 1px solid #555555; /* Bordure subtile */
+    border: 1px solid #555555;
     border-radius: 5px;
     color: #0aaf0a;
     outline: none;
@@ -51,9 +51,9 @@
 }
 
 .input:focus {
-    color: #ffffff; /* Texte plus clair en focus */
+    color: #ffffff; 
     background-color: #0F0F0F;
-    border-color: #0aaf0a; /* Bordure de focus visible */
+    border-color: #0aaf0a; 
     box-shadow: 0 0 10px 0 #0aaf0a;
     transform: scale(1.02);
 }
