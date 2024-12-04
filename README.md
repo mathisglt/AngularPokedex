@@ -45,15 +45,11 @@
 PokeDemo/
 ├── src/
 │   ├── app/
-│   │   ├── components/
-│   │   │   ├── pokedex/          # Composant principal affichant la liste des Pokémon
-│   │   │   ├── pokemon-details/  # Composant affichant les détails d'un Pokémon
-│   │   ├── services/
-│   │   │   ├── pokeapi.service.ts # Service pour appeler l'API PokeAPI
-│   │   ├── models/
-│   │   │   ├── pokemon.ts        # Types et interfaces pour les données des Pokémon
-│   ├── assets/
-│   │   ├── images/               # Images statiques et ressources supplémentaires
-│   ├── styles.css                # Styles globaux
+│   │   ├── affichagedata/
+│   │   ├── search-bar/
+│   ├── app.component.html
+│   ├── pokeapi.service.ts
+│   ├── model.ts
+│   ├── ...
 ├── package.json                  # Dépendances et scripts
 └── README.md                     # Documentation
