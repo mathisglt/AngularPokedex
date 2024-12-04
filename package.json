@@ -5,6 +5,7 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "deploy": "ng build --base-href=https://mathisglt.github.io/AngularPokedex/ && gh-pages -d dist/pokedemo",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
@@ -20,7 +21,6 @@
     "@angular/platform-browser": "^18.2.0",
     "@angular/platform-browser-dynamic": "^18.2.0",
     "@angular/router": "^18.2.0",
-    "gh-pages": "^6.2.0",
     "http-proxy-middleware": "^3.0.3",
     "ng": "^0.0.0",
     "primeicons": "^7.0.0",
@@ -35,6 +35,7 @@
     "@angular/compiler-cli": "^18.2.0",
     "@types/jasmine": "~5.1.0",
     "angular-cli-ghpages": "^2.0.3",
+    "gh-pages": "^6.2.0",
     "jasmine-core": "~5.2.0",
     "karma": "~6.4.0",
     "karma-chrome-launcher": "~3.2.0",
