@@ -7,14 +7,15 @@ import { PokeModel, PokeModelDetails } from '../models/model';
   providedIn: 'root'
 })
 export class PokeapiService {
+  private baseUrl: string = 'https://pokeapi.co/api/v2';
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
-
-  getPokemons(): Observable<PokeModel>{
-    return this.http.get<PokeModel>("https://pokeapi.co/api/v2/pokemon?limit=1025&offset=0");
+  getPokemons(): Observable<PokeModel> {
+    return this.http.get<PokeModel>(`${this.baseUrl}/pokemon?limit=1025&offset=0`);
   }
-  getPokemonDetails(id:string): Observable<PokeModelDetails>{
-    return this.http.get<PokeModelDetails>("https://pokeapi.co/api/v2/pokemon/"+id);
+
+  getPokemonDetails(id: string): Observable<PokeModelDetails> {
+    return this.http.get<PokeModelDetails>(`${this.baseUrl}/pokemon/${id}`);
   }
 }
