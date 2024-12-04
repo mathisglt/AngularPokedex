@@ -45,11 +45,15 @@
 PokeDemo/
 ├── src/
 │   ├── app/
-│   │   ├── affichagedata/
-│   │   ├── search-bar/
-│   ├── app.component.html
-│   ├── pokeapi.service.ts
-│   ├── model.ts
-│   ├── ...
+│   │   ├── components/
+│   │   |   ├── affichagedata/
+│   │   |   ├── app/ 
+│   │   |   ├── search-bar/
+│   │   ├── models/
+│   │   ├── pipes/
+│   │   ├── services/
+│   ├── index.html
+│   ├── main.ts
+│   ├── styles.css
 ├── package.json                  # Dépendances et scripts
 └── README.md                     # Documentation
