@@ -35,7 +35,7 @@
 **3. Lancez le projet en mode développement :**
 
   ```
-  ng serve
+  ng serve ou npm run start
   Accédez ensuite à http://localhost:4200.
   ```
 
