@@ -3,8 +3,12 @@ html, body {
     height: 100%;
     margin: 0;
     padding: 0;
-    background-color: #0f0f0f;
+    background-image: url("https://img.freepik.com/vecteurs-libre/zoom-vitesse-tuyau-lumiere-bleue-abstraite-technologie-fond-noir_1142-9120.jpg");
+    background-size: cover; /* Ensures the image covers the entire area */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-position: center; /* Centers the image */
     color: rgb(0, 255, 255);
 }
+
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

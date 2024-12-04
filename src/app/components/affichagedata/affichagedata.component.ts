@@ -1,7 +1,7 @@
 import { Component, Input, SimpleChanges } from '@angular/core';
-import { PokeapiService } from '../pokeapi.service';
-import { PokeModelDetails } from '../model';
-import { Pokemon } from '../pokemon';
+import { PokeapiService } from '../../services/pokeapi.service';
+import { PokeModelDetails } from '../../models/model';
+import { Pokemon } from '../../models/pokemon';
 import { CarouselModule } from 'primeng/carousel';
 
 @Component({
@@ -42,10 +42,10 @@ export class AffichagedataComponent {
     types: [],
     weight: 0,
   };
-  
+
   @Input() idPoke?: string;
-  
-  pokemonLoaded: boolean = false; 
+
+  pokemonLoaded: boolean = false;
   pokemonImages: string[]= [];
   cri: string ="";
 
@@ -62,10 +62,10 @@ export class AffichagedataComponent {
           this.pokemon.sprites.back_default,
           this.pokemon.sprites.front_shiny,
           this.pokemon.sprites.back_shiny,
-        ].filter(img => img !== null); 
-        this.pokemonLoaded = false; 
+        ].filter(img => img !== null);
+        this.pokemonLoaded = false;
         setTimeout(() => {
-          this.pokemonLoaded = true; 
+          this.pokemonLoaded = true;
         }, 500);
       });
     }
